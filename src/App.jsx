@@ -1,16 +1,18 @@
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Main from "./pages/Main";
+import About from "./pages/About";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <p>HOME</p>,
+    element: <Main />,
     errorElement: <p>Not Found🤦‍♀️</p>,
   },
   {
     path: "/about",
-    element: <p>about</p>,
+    element: <About />,
   },
   {
     path: "/textile_design",
