@@ -13,7 +13,7 @@ function Textile() {
     navigate(`/textile_design/${text}`);
   };
   return (
-    <div>
+    <section>
       Textile Design
       <form onSubmit={handleSubmit}>
         <input
@@ -23,7 +23,7 @@ function Textile() {
           onChange={handleChange}
         />
       </form>
-    </div>
+    </section>
   );
 }
 

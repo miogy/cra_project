@@ -4,7 +4,11 @@ import { useParams } from "react-router-dom";
 function TextileDetail() {
   const { designId } = useParams();
   //   console.log(params);
-  return <>Detail {designId}</>;
+  return (
+    <>
+      <section>Detail {designId}</section>
+    </>
+  );
 }
 
 export default TextileDetail;

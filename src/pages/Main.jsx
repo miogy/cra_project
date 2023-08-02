@@ -1,7 +1,11 @@
 import React from "react";
 
 function Main() {
-  return <>Main</>;
+  return (
+    <>
+      <section>Main</section>
+    </>
+  );
 }
 
 export default Main;
