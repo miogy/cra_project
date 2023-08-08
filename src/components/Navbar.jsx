@@ -59,7 +59,12 @@ function Navbar() {
           <Link to="/wallpaper" className="menu_link">
             WALLPAPER
           </Link>
-          <button onClick={() => setDisplay(false)}>x</button>
+          <button
+            className="menu_link close_btn"
+            onClick={() => setDisplay(false)}
+          >
+            CLOSE
+          </button>
         </div>
       )}
     </NavWrap>
@@ -102,8 +107,16 @@ const NavWrap = styled.nav`
     width: 100%;
     font-size: 24px;
     font-weight: 700;
+    line-height: 32px;
     list-style: none;
     text-decoration: none;
     color: #000;
+  }
+  .close_btn {
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+    text-align: start;
+    padding: 0;
+    padding-top: 80px;
   }
 `;
