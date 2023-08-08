@@ -20,6 +20,7 @@ function Root() {
 
 export default Root;
 
+// footer height만큼
 const Dummy = styled.div`
-  height: 120px;
+  height: 140px;
 `;

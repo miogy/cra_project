@@ -89,6 +89,8 @@ const NavWrap = styled.nav`
       font-weight: 800;
       font-family: "Gerstner Programm FSL", "Noto Sans KR", sans-serif;
       -webkit-font-smoothing: antialiased;
+      border: 0;
+      background-color: rgba(0, 0, 0, 0);
     }
     .my_info {
       display: flex;
@@ -101,6 +103,7 @@ const NavWrap = styled.nav`
     top: 0;
     left: 0;
     background-color: #fff;
+    box-shadow: 0.2em 0.2em 0.3em rgba(0, 0, 0, 0.1);
   }
   .menu_link {
     display: inline-block;
