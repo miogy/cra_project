@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+import { BsInstagram } from "react-icons/bs";
+import { FaGithubSquare } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 
@@ -33,11 +35,16 @@ function Navbar() {
           MENU
         </button>
         <button className="nav_menu" onClick={() => navigate("/")}>
-          MIOGY
+          <p>MIOGY</p>
+          <p>Designer | Front-end</p>
         </button>
         <div className="my_info">
-          <button className="nav_menu">sns</button>
-          <button className="nav_menu">sns</button>
+          <button className="nav_menu">
+            <BsInstagram />
+          </button>
+          <button className="nav_menu">
+            <FaGithubSquare />
+          </button>
           <button className="nav_menu">info</button>
         </div>
       </h1>
@@ -59,6 +66,7 @@ function Navbar() {
           <Link to="/wallpaper" className="menu_link">
             WALLPAPER
           </Link>
+
           <button
             className="menu_link close_btn"
             onClick={() => setDisplay(false)}
@@ -78,8 +86,8 @@ const NavWrap = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   /* border: 1px solid red; */
+  background-color: #fff;
   h1 {
     width: 100%;
     display: flex;
@@ -91,14 +99,25 @@ const NavWrap = styled.nav`
       -webkit-font-smoothing: antialiased;
       border: 0;
       background-color: rgba(0, 0, 0, 0);
+      p {
+        padding-top: 28px;
+        margin: 0;
+      }
+      p:last-child {
+        margin: 0;
+        padding: 0;
+        font-size: 18px;
+        line-height: 26px;
+      }
     }
     .my_info {
       display: flex;
+      z-index: 100;
     }
   }
   .menu_display {
     width: 100%;
-    padding: 80px 0 80px 40px;
+    padding-top: 40px;
     position: absolute;
     top: 0;
     left: 0;
@@ -106,14 +125,21 @@ const NavWrap = styled.nav`
     box-shadow: 0.2em 0.2em 0.3em rgba(0, 0, 0, 0.1);
   }
   .menu_link {
-    display: inline-block;
-    width: 100%;
-    font-size: 24px;
+    margin-left: 40px;
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 32px;
     font-weight: 700;
-    line-height: 32px;
+    line-height: 48px;
     list-style: none;
     text-decoration: none;
     color: #000;
+  }
+  .menu_link:hover {
+    color: lightgray;
   }
   .close_btn {
     border: 0;
@@ -121,5 +147,6 @@ const NavWrap = styled.nav`
     text-align: start;
     padding: 0;
     padding-top: 80px;
+    margin-bottom: 80px;
   }
 `;
