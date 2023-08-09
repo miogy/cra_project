@@ -30,7 +30,7 @@ function Main() {
       <div className="background">
         <Title>
           <p>story</p>
-          <h3>Title</h3>
+          <h3>ARCHIVE</h3>
         </Title>
         <Cardwrap>
           <div className="card">
