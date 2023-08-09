@@ -3,6 +3,7 @@ import { BsInstagram } from "react-icons/bs";
 import { FaGithubSquare } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
+import ExternalLinkButton from "../hook/ExternalLinkButton";
 
 function Navbar({ setIsVisible }) {
   const navigate = useNavigate();
@@ -26,6 +27,7 @@ function Navbar({ setIsVisible }) {
     <NavWrap>
       <h1 onClick={() => navigate("/")}>
         <button
+          type="button"
           ref={el}
           className="nav_menu"
           onClick={() => {
@@ -35,18 +37,24 @@ function Navbar({ setIsVisible }) {
         >
           MENU
         </button>
-        <button className="nav_menu" onClick={() => navigate("/")}>
+        <button
+          type="button"
+          className="nav_menu"
+          onClick={() => navigate("/")}
+        >
           <p>MIOGY</p>
           <p>Designer | Front-end</p>
         </button>
         <div className="my_info">
-          <button className="nav_menu">
-            <BsInstagram />
-          </button>
-          <button className="nav_menu">
-            <FaGithubSquare />
-          </button>
-          <button className="nav_menu">info</button>
+          <ExternalLinkButton
+            link="https://www.instagram.com/mi_ogy"
+            icon={<BsInstagram />}
+          />
+          <ExternalLinkButton
+            link="https://github.com/miogy"
+            icon={<FaGithubSquare />}
+          />
+          <ExternalLinkButton link="/" icon={"info"} />
         </div>
       </h1>
       {display && (

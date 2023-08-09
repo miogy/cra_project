@@ -30,7 +30,7 @@ function Main() {
       <div className="background">
         <Title>
           <p>story</p>
-          <h3>Title</h3>
+          <h3>ARCHIVE</h3>
         </Title>
         <Cardwrap>
           <div className="card">
@@ -54,16 +54,16 @@ function Main() {
             <img src={require("../assets/main03_02.jpg")} alt="archive01" />
           </div>
         </Cardwrap>
-        <button className="scroll_to_top" onClick={handleScrollToTop}>
-          <p>
-            <IoIosArrowUp size={28} />
-          </p>
-          <p>SCROLL TO TOP</p>
-        </button>
 
-        <p className="bottom_title">
+        <div className="bottom_title">
+          <button className="scroll_to_top" onClick={handleScrollToTop}>
+            <p>
+              <IoIosArrowUp size={28} />
+            </p>
+            <p>SCROLL TO TOP</p>
+          </button>
           M<span>IOGY PORTFOLI</span>O
-        </p>
+        </div>
       </div>
     </MainWrap>
   );
@@ -79,6 +79,16 @@ const MainWrap = styled.main`
       padding-top: 30px;
       padding-bottom: 180px;
       text-align: center;
+    }
+    .bottom_title {
+      margin: 0;
+      padding: 0;
+      font-size: 250px;
+      font-weight: 700;
+      letter-spacing: -22px;
+      span {
+        font-weight: 100;
+      }
       .scroll_to_top {
         position: absolute;
         bottom: 300px;
@@ -93,16 +103,6 @@ const MainWrap = styled.main`
           margin: 0;
           padding: 0;
         }
-      }
-    }
-    .bottom_title {
-      margin: 0;
-      padding: 0;
-      font-size: 250px;
-      font-weight: 700;
-      letter-spacing: -22px;
-      span {
-        font-weight: 100;
       }
     }
   }
