@@ -40,6 +40,13 @@ a {
     transform: rotate(360deg);
   }
 }
+li {
+  list-style: none;
+  text-decoration: none;
+}
+button:hover {
+  cursor: pointer;
+}
 .wrap {
   width: 100%;
   /* height: 100vh; */
@@ -60,6 +67,6 @@ a {
 }
 
 section {
-  width: 834px;
+  max-width: 80%;
   margin: 0 auto;
 }

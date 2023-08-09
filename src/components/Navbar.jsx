@@ -4,7 +4,7 @@ import { FaGithubSquare } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 
-function Navbar() {
+function Navbar({ setIsVisible }) {
   const navigate = useNavigate();
   const el = useRef();
   const [display, setDisplay] = useState(false);
@@ -30,6 +30,7 @@ function Navbar() {
           className="nav_menu"
           onClick={() => {
             setDisplay((prev) => !prev);
+            setIsVisible(true);
           }}
         >
           MENU
@@ -88,17 +89,19 @@ const NavWrap = styled.nav`
   align-items: center;
   /* border: 1px solid red; */
   background-color: #fff;
+
   h1 {
     width: 100%;
     display: flex;
     justify-content: space-between;
     .nav_menu {
-      font-size: 48px;
+      font-size: 58px;
       font-weight: 800;
       font-family: "Gerstner Programm FSL", "Noto Sans KR", sans-serif;
       -webkit-font-smoothing: antialiased;
       border: 0;
       background-color: rgba(0, 0, 0, 0);
+      z-index: 5;
       p {
         padding-top: 28px;
         margin: 0;
@@ -123,6 +126,7 @@ const NavWrap = styled.nav`
     left: 0;
     background-color: #fff;
     box-shadow: 0.2em 0.2em 0.3em rgba(0, 0, 0, 0.1);
+    z-index: 10;
   }
   .menu_link {
     margin-left: 40px;
