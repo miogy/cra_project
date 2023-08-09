@@ -4,7 +4,7 @@ import { styled } from "styled-components";
 function Footer() {
   return (
     <FooterWrap>
-      <div className="linkBtn">
+      <div className="linkBtn footer_bottom">
         <a
           className="button"
           href="https://blog.naver.com/jjangrl87"
@@ -66,7 +66,7 @@ function Footer() {
           </svg>
         </a>
       </div>
-      <div className="email">
+      <div className="email footer_bottom">
         <small>© 2023. 양미옥</small>
         <small>
           <a href="mailto:jjangrl87@gmail.com">jjangrl87@gmail.com</a>
@@ -79,9 +79,12 @@ function Footer() {
 export default Footer;
 
 const FooterWrap = styled.footer`
-  padding: 0 5%;
-  div {
+  width: 100%;
+  /* padding: 0 5%; */
+  .footer_bottom {
     position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     bottom: 0;
     display: flex;
     justify-content: center;
@@ -93,12 +96,20 @@ const FooterWrap = styled.footer`
       }
     }
   }
+
   .email {
     padding: 30px 0;
     display: flex;
     flex-direction: column;
+
     small {
       margin-bottom: 10px;
+      a {
+        color: #000;
+        :hover {
+          cursor: pointer;
+        }
+      }
     }
   }
 `;
