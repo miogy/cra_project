@@ -5,8 +5,11 @@ import Main from "./pages/Main";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import Root from "./pages/Root";
-import Textile from "./pages/Textile";
-import TextileDetail from "./pages/TextileDetail";
+import Graphic from "./pages/Graphic";
+import GraphicDetail from "./pages/GraphicDetail";
+import Wallpaper from "./pages/Wallpaper";
+import Archive from "./pages/Archive";
+import Develop from "./pages/Develop";
 
 const router = createBrowserRouter([
   {
@@ -20,24 +23,24 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "/textile_design",
-        element: <Textile />,
+        path: "/graphic",
+        element: <Graphic />,
       },
       {
-        path: "/textile_design/:designId",
-        element: <TextileDetail />,
+        path: "/graphic/:designId",
+        element: <GraphicDetail />,
       },
       {
-        path: "/projects",
-        element: <p>project</p>,
+        path: "/develop",
+        element: <Develop />,
       },
       {
-        path: "/web_app",
-        element: <p>web and app</p>,
+        path: "/archive",
+        element: <Archive />,
       },
       {
-        path: "archiving",
-        element: <p>archiving</p>,
+        path: "/wallpaper",
+        element: <Wallpaper />,
       },
     ],
   },

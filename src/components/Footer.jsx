@@ -79,10 +79,10 @@ function Footer() {
 export default Footer;
 
 const FooterWrap = styled.footer`
-  /* width: 100%; */
   padding: 0 5%;
-  padding-top: 30px;
   div {
+    position: absolute;
+    bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;

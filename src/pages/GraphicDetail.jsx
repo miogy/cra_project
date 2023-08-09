@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
-function TextileDetail() {
+function GraphicDetail() {
   const { designId } = useParams();
   //   console.log(params);
   return (
@@ -11,4 +11,4 @@ function TextileDetail() {
   );
 }
 
-export default TextileDetail;
+export default GraphicDetail;

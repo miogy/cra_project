@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Textile() {
+function Graphic() {
   const [text, setText] = useState("");
   const navigate = useNavigate();
   const handleChange = (e) => {
@@ -14,7 +14,7 @@ function Textile() {
   };
   return (
     <section>
-      Textile Design
+      Textile & Graphic Design & project Design
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -27,4 +27,4 @@ function Textile() {
   );
 }
 
-export default Textile;
+export default Graphic;
