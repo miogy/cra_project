@@ -9,6 +9,7 @@ function Navbar({ setIsVisible }) {
   const navigate = useNavigate();
   const el = useRef();
   const [display, setDisplay] = useState(false);
+  const path = process.env.PUBLIC_URL;
 
   const handleClose = (e) => {
     if (el.current !== e.target) {
@@ -25,14 +26,13 @@ function Navbar({ setIsVisible }) {
   });
   return (
     <NavWrap>
-      <h1 onClick={() => navigate("/")}>
+      <h1>
         <button
           type="button"
           ref={el}
           className="nav_menu"
           onClick={() => {
             setDisplay((prev) => !prev);
-            setIsVisible(true);
           }}
         >
           MENU
@@ -40,7 +40,7 @@ function Navbar({ setIsVisible }) {
         <button
           type="button"
           className="nav_menu"
-          onClick={() => navigate("/")}
+          onClick={() => navigate(path)}
         >
           <p>MIOGY</p>
           <p>Designer | Front-end</p>
@@ -54,25 +54,25 @@ function Navbar({ setIsVisible }) {
             link="https://github.com/miogy"
             icon={<FaGithubSquare />}
           />
-          <ExternalLinkButton link="/" icon={"info"} />
+          <ExternalLinkButton link={path} icon={"info"} />
         </div>
       </h1>
       {display && (
         <div className="menu_display">
-          <Link to="/about" className="menu_link">
+          <Link to="about" className="menu_link">
             ABOUT
           </Link>
 
-          <Link to="/graphic" className="menu_link">
+          <Link to="graphic" className="menu_link">
             GRAPHIC
           </Link>
-          <Link to="/develop" className="menu_link">
+          <Link to="develop" className="menu_link">
             DEVELOP
           </Link>
-          <Link to="/archive" className="menu_link">
+          <Link to="archive" className="menu_link">
             ARCHIVE
           </Link>
-          <Link to="/wallpaper" className="menu_link">
+          <Link to="wallpaper" className="menu_link">
             WALLPAPER
           </Link>
 
