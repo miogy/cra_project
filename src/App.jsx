@@ -23,27 +23,27 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Main /> },
       {
-        path: process.env.PUBLIC_URL + "/about",
+        path: "/about",
         element: <About />,
       },
       {
-        path: process.env.PUBLIC_URL + "/graphic",
+        path: "/graphic",
         element: <Graphic />,
       },
       {
-        path: process.env.PUBLIC_URL + "/graphic/:designId",
+        path: "/graphic/:designId",
         element: <GraphicDetail />,
       },
       {
-        path: process.env.PUBLIC_URL + "/develop",
+        path: "/develop",
         element: <Develop />,
       },
       {
-        path: process.env.PUBLIC_URL + "/archive",
+        path: "/archive",
         element: <Archive />,
       },
       {
-        path: process.env.PUBLIC_URL + "/wallpaper",
+        path: "/wallpaper",
         element: <Wallpaper />,
       },
     ],
