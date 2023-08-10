@@ -1,6 +1,10 @@
 // import logo from "./logo.svg";
 import "./App.css";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import {
+  HashRouter,
+  // RouterProvider,
+  createBrowserRouter,
+} from "react-router-dom";
 import Main from "./pages/Main";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
@@ -47,7 +51,8 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  // return <RouterProvider router={router} />;
+  return <HashRouter router={router} />;
 }
 
 export default App;
