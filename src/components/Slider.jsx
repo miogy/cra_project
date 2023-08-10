@@ -13,15 +13,18 @@ function Slider() {
   const slideRef = useRef(null);
 
   const TOTAL_SLIDES = 2;
-  const images = [
-    img1,
-    img5,
-    img2,
-    img3,
-    img4,
-    "https://user-images.githubusercontent.com/99234582/235703083-ef5526cb-cc41-4ec5-93f1-422043701072.jpeg",
-    img6,
-  ];
+  const images = useMemo(
+    () => [
+      img1,
+      img5,
+      img2,
+      img3,
+      img4,
+      "https://user-images.githubusercontent.com/99234582/235703083-ef5526cb-cc41-4ec5-93f1-422043701072.jpeg",
+      img6,
+    ],
+    []
+  );
 
   const nextSlide = () => {
     if (currentSlide >= TOTAL_SLIDES) {
