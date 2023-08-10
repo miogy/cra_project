@@ -5,14 +5,14 @@ import { styled } from "styled-components";
 function Graphic() {
   const [text, setText] = useState("");
   const navigate = useNavigate();
-  const handleChange = (e) => {
-    setText(e.target.value);
-  };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setText("");
-    navigate(`/textile_design/${text}`);
-  };
+  // const handleChange = (e) => {
+  //   setText(e.target.value);
+  // };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   setText("");
+  //   navigate(`/textile_design/${text}`);
+  // };
   return (
     <GraphicWrap>
       <section>
