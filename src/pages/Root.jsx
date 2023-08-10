@@ -28,7 +28,7 @@ function Root() {
   return (
     <>
       <div className="wrap">
-        <Navbar setIsVisible={setIsVisible} />
+        <Navbar />
         <Outlet />
       </div>
 

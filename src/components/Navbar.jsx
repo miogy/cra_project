@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 import ExternalLinkButton from "../hook/ExternalLinkButton";
 
-function Navbar({ setIsVisible }) {
+function Navbar() {
   const navigate = useNavigate();
   const el = useRef();
   const [display, setDisplay] = useState(false);
