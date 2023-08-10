@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
+// import { useState,useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 
 function Graphic() {
-  const [text, setText] = useState("");
-  const navigate = useNavigate();
+  // const [text, setText] = useState("");
+  // const navigate = useNavigate();
   // const handleChange = (e) => {
   //   setText(e.target.value);
   // };

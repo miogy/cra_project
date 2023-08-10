@@ -1,8 +1,8 @@
 // import logo from "./logo.svg";
 import "./App.css";
 import {
-  HashRouter,
-  // RouterProvider,
+  // HashRouter,
+  RouterProvider,
   createBrowserRouter,
 } from "react-router-dom";
 import Main from "./pages/Main";
@@ -17,33 +17,33 @@ import Develop from "./pages/Develop";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: process.env.PUBLIC_URL,
     element: <Root />,
     errorElement: <NotFound />,
     children: [
       { index: true, element: <Main /> },
       {
-        path: "/about",
+        path: process.env.PUBLIC_URL + "/about",
         element: <About />,
       },
       {
-        path: "/graphic",
+        path: process.env.PUBLIC_URL + "/graphic",
         element: <Graphic />,
       },
       {
-        path: "/graphic/:designId",
+        path: process.env.PUBLIC_URL + "/graphic/:designId",
         element: <GraphicDetail />,
       },
       {
-        path: "/develop",
+        path: process.env.PUBLIC_URL + "/develop",
         element: <Develop />,
       },
       {
-        path: "/archive",
+        path: process.env.PUBLIC_URL + "/archive",
         element: <Archive />,
       },
       {
-        path: "/wallpaper",
+        path: process.env.PUBLIC_URL + "/wallpaper",
         element: <Wallpaper />,
       },
     ],
@@ -51,8 +51,8 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  // return <RouterProvider router={router} />;
-  return <HashRouter router={router} />;
+  return <RouterProvider router={router} />;
+  // return <HashRouter router={router} />;
 }
 
 export default App;
