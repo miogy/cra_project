@@ -22,30 +22,12 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
     children: [
       { index: true, element: <Main /> },
-      {
-        path: "/about",
-        element: <About />,
-      },
-      {
-        path: "/graphic",
-        element: <Graphic />,
-      },
-      {
-        path: "/graphic/:designId",
-        element: <GraphicDetail />,
-      },
-      {
-        path: "/develop",
-        element: <Develop />,
-      },
-      {
-        path: "/archive",
-        element: <Archive />,
-      },
-      {
-        path: "/wallpaper",
-        element: <Wallpaper />,
-      },
+      { path: "about", element: <About /> },
+      { path: "graphic", element: <Graphic /> },
+      { path: "graphic/:designId", element: <GraphicDetail /> },
+      { path: "develop", element: <Develop /> },
+      { path: "archive", element: <Archive /> },
+      { path: "wallpaper", element: <Wallpaper /> },
     ],
   },
 ]);
