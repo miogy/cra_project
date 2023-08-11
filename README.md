@@ -15,9 +15,9 @@
 
 ### 라이브러리
 
-라우팅 : react-router-dom,
-아이콘 : react-icons,
-CSS : styled-components,
+라우팅 : react-router-dom<br>
+아이콘 : react-icons<br>
+CSS : styled-components<br>
 배포 : gh-page
 
 <!-- <a href="https://www.instagram.com/mi_ogy/" target="_blank"><img src="https://img.shields.io/badge/Instagram-E4405F?style=plastic&logo=Instagram&logoColor=white"/></a> <a href="https://blog.naver.com/jjangrl87" target="_blank"><img src="https://img.shields.io/badge/NAVER-03C75A?style=plastic&logo=NAVER&logoColor=white"/></a> <a href="https://velog.io/@miogy" target="_blank"><img src="https://img.shields.io/badge/Velog-20C997?style=plastic&logo=Velog&logoColor=white"/></a> -->
@@ -33,7 +33,7 @@ CSS : styled-components,
 
 <br>
 
-### 🌄 - Graphic
+### Graphic
 
 <img src="https://img.shields.io/badge/Photoshop-31A8FF?style=flat-square&logo=Adobe Photoshop&logoColor=white"/> 
 <img src="https://img.shields.io/badge/Illustrator-FF9A00?style=flat-square&logo=Adobe Illustrator&logoColor=white"/> 
