@@ -3,10 +3,14 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { styled } from "styled-components";
 import { useEffect, useState } from "react";
+import ExternalLinkButton from "../hook/ExternalLinkButton";
+import { BsInstagram } from "react-icons/bs";
+import { FaGithubSquare } from "react-icons/fa";
 
 function Root() {
   const [isVisible, setIsVisible] = useState(true);
   const [height, setHeight] = useState(0);
+  const path = process.env.PUBLIC_URL;
 
   useEffect(() => {
     window.addEventListener("scroll", listenToScroll);
@@ -32,7 +36,21 @@ function Root() {
         <Outlet />
       </div>
 
-      <Dummy></Dummy>
+      <Dummy>
+        <div className="footer_bottom">
+          <ExternalLinkButton
+            components="footer"
+            link="https://www.instagram.com/mi_ogy"
+            icon={<BsInstagram />}
+          />
+          <ExternalLinkButton
+            components="footer"
+            link="https://github.com/miogy"
+            icon={<FaGithubSquare />}
+          />
+          <ExternalLinkButton components="footer" link={path} icon={"info"} />
+        </div>
+      </Dummy>
       <div className="fixed_footer">
         <BackgroundImg></BackgroundImg>
         <Footer />
@@ -50,7 +68,14 @@ export default Root;
 
 // footer_dummy
 const Dummy = styled.div`
+  position: relative;
   height: 140px;
+  .footer_bottom {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 `;
 const BackgroundImg = styled.div`
   width: 100%;
