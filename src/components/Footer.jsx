@@ -1,8 +1,5 @@
 import React from "react";
 import { styled } from "styled-components";
-import ExternalLinkButton from "../hook/ExternalLinkButton";
-import { BsInstagram } from "react-icons/bs";
-import { FaGithubSquare } from "react-icons/fa";
 
 function Footer() {
   return (
