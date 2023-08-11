@@ -5,22 +5,8 @@ import { BsInstagram } from "react-icons/bs";
 import { FaGithubSquare } from "react-icons/fa";
 
 function Footer() {
-  const path = process.env.PUBLIC_URL;
   return (
     <FooterWrap>
-      <div className="linkBtn footer_bottom">
-        <ExternalLinkButton
-          components="footer"
-          link="https://www.instagram.com/mi_ogy"
-          icon={<BsInstagram />}
-        />
-        <ExternalLinkButton
-          components="footer"
-          link="https://github.com/miogy"
-          icon={<FaGithubSquare />}
-        />
-        <ExternalLinkButton components="footer" link={path} icon={"info"} />
-      </div>
       {/* <div >
         <a
           
