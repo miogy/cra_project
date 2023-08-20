@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/cra_project/static/css/main.4f2409ae.css",
-    "main.js": "/cra_project/static/js/main.5c2d6af3.js",
+    "main.css": "/cra_project/static/css/main.91fa8b53.css",
+    "main.js": "/cra_project/static/js/main.f0f83687.js",
     "static/js/787.4a75ff3e.chunk.js": "/cra_project/static/js/787.4a75ff3e.chunk.js",
     "static/media/web_main.jpg": "/cra_project/static/media/web_main.1421d0795146c623e8f3.jpg",
     "static/media/card.jpg": "/cra_project/static/media/card.56372ad96a4a20abdcfc.jpg",
@@ -14,14 +14,13 @@
     "static/media/main02_01.jpg": "/cra_project/static/media/main02_01.76f99c1b8c97b1d6ec76.jpg",
     "static/media/main02_02.jpg": "/cra_project/static/media/main02_02.f387eda3eb9b045127e3.jpg",
     "static/media/main02_03.jpg": "/cra_project/static/media/main02_03.680da1097313bd4cf9a8.jpg",
-    "static/media/main03_02.jpg": "/cra_project/static/media/main03_02.0cd5dc5b38b02efe13d4.jpg",
     "index.html": "/cra_project/index.html",
-    "main.4f2409ae.css.map": "/cra_project/static/css/main.4f2409ae.css.map",
-    "main.5c2d6af3.js.map": "/cra_project/static/js/main.5c2d6af3.js.map",
+    "main.91fa8b53.css.map": "/cra_project/static/css/main.91fa8b53.css.map",
+    "main.f0f83687.js.map": "/cra_project/static/js/main.f0f83687.js.map",
     "787.4a75ff3e.chunk.js.map": "/cra_project/static/js/787.4a75ff3e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4f2409ae.css",
-    "static/js/main.5c2d6af3.js"
+    "static/css/main.91fa8b53.css",
+    "static/js/main.f0f83687.js"
   ]
 }
