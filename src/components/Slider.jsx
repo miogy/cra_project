@@ -80,6 +80,10 @@ const Container = styled.div`
   width: 100%;
   height: 80vh;
   overflow: hidden;
+  @media screen and (max-width: 1200px) and (min-width: 580px) {
+    height: 100%;
+    margin-bottom: 120px;
+  }
 `;
 const Button = styled.button`
   border: 0;

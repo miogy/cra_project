@@ -131,4 +131,7 @@ const GalleryWrap = styled.div`
       width: 60;
     }
   }
+  @media screen and (max-width: 1200px) and (min-width: 580px) {
+    height: 100%;
+  }
 `;

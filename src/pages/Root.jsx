@@ -80,6 +80,13 @@ const RootWrap = styled.div`
       width: 100%;
     }
   }
+  @media screen and (max-width: 1200px) and (min-width: 580px) {
+    .fixed_footer {
+      img {
+        display: none;
+      }
+    }
+  }
 `;
 
 // footer_dummy

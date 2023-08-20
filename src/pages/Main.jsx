@@ -126,6 +126,16 @@ const MainWrap = styled.main`
   .background:last-child {
     padding-top: 200px;
   }
+  @media screen and (max-width: 1200px) and (min-width: 580px) {
+    .container {
+      section {
+        padding-bottom: 120px;
+      }
+    }
+    .bottom_title {
+      display: none;
+    }
+  }
 `;
 
 const Title = styled.div`
@@ -144,6 +154,9 @@ const Title = styled.div`
     font-weight: 400;
     line-height: 32px;
   }
+  @media screen and (max-width: 1200px) and (min-width: 580px) {
+    padding-top: 0;
+  }
 `;
 
 const Dummy = styled.div`
@@ -157,5 +170,8 @@ const Dummy = styled.div`
     color: #000;
     text-align: center;
     align-items: center;
+  }
+  @media screen and (max-width: 1200px) and (min-width: 580px) {
+    height: 0;
   }
 `;
