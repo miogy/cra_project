@@ -95,9 +95,8 @@ export default ImageGallery;
 const GalleryWrap = styled.div`
   width: 100%;
   height: 600px;
-  padding-bottom: 240px;
   ul {
-    padding: 80px 5% 0 5%;
+    padding-top: 80px;
     display: flex;
     justify-content: space-between;
     /* align-items: center; */
@@ -106,7 +105,7 @@ const GalleryWrap = styled.div`
       .keyword_btn {
         display: flex;
         flex-direction: column;
-        font-size: 26px;
+        font-size: 32px;
         font-weight: 600;
         line-height: 36px;
         border: 0;
@@ -126,6 +125,7 @@ const GalleryWrap = styled.div`
     }
     .keyword_container {
       width: 20%;
+      text-align: start;
     }
     .hover_img_container {
       width: 60;

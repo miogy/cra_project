@@ -14,47 +14,42 @@ function Main() {
   };
   return (
     <MainWrap>
-      <div className="background top_boxshadow">
+      <div className="container slider_wrap">
         <section>
           <Slider />
+          <Title>
+            <h3>@WORK</h3>
+          </Title>
+          <ImageGallery />
         </section>
-        <Title>
-          <h3>@WORK</h3>
-        </Title>
-        <ImageGallery />
       </div>
 
-      <Dummy>
-        <p>PORTFOLIO</p>
-      </Dummy>
-      <div className="background">
-        <Title>
-          <p>story</p>
-          <h3>ARCHIVE</h3>
-        </Title>
-        <Cardwrap>
-          <div className="card">
-            <span>NO.01</span>
-            <img src={require("../assets/main02_01.jpg")} alt="archive01" />
+      <Dummy>{/* <p>PORTFOLIO</p> */}</Dummy>
+      <div className="container">
+        <section>
+          <Title>
+            <p>story</p>
+            <h3>ARCHIVE</h3>
+          </Title>
+          <div className="card_wrap">
+            <div className="card">
+              <span>NO.01</span>
+              <img src={require("../assets/main02_01.jpg")} alt="archive01" />
+            </div>
+            <div className="card">
+              <span>NO.02</span>
+              <img src={require("../assets/main02_02.jpg")} alt="archive01" />
+            </div>
+            <div className="card">
+              <span>NO.03</span>
+              <img src={require("../assets/main02_03.jpg")} alt="archive01" />
+            </div>
+            <div className="card">
+              <span>NO.04</span>
+              <img src={require("../assets/main02_04.jpg")} alt="archive01" />
+            </div>
           </div>
-          <div className="card">
-            <span>NO.02</span>
-            <img src={require("../assets/main02_02.jpg")} alt="archive01" />
-          </div>
-          <div className="card">
-            <span>NO.03</span>
-            <img src={require("../assets/main02_03.jpg")} alt="archive01" />
-          </div>
-          <div className="card">
-            <span>NO.04</span>
-            <img src={require("../assets/main02_04.jpg")} alt="archive01" />
-          </div>
-          <div className="card">
-            <span>NO.05</span>
-            <img src={require("../assets/main03_02.jpg")} alt="archive01" />
-          </div>
-        </Cardwrap>
-
+        </section>
         <div className="bottom_title">
           <button className="scroll_to_top" onClick={handleScrollToTop}>
             <p>
@@ -73,12 +68,34 @@ export default Main;
 
 const MainWrap = styled.main`
   width: 100%;
-  .background {
+  .slider_wrap {
+    padding-top: 100px;
+  }
+  .container {
     background-color: #fff;
     section {
-      padding-top: 30px;
       padding-bottom: 180px;
       text-align: center;
+      .card_wrap {
+        display: flex;
+        .card {
+          width: 300px;
+          border: 1px solid black;
+          border-right: 0;
+          text-align: start;
+          span {
+            display: inline-block;
+            line-height: 60px;
+            margin-left: 20px;
+          }
+          img {
+            width: 100%;
+          }
+        }
+        .card:last-child {
+          border-right: 1px solid black;
+        }
+      }
     }
     .bottom_title {
       margin: 0;
@@ -112,8 +129,8 @@ const MainWrap = styled.main`
 `;
 
 const Title = styled.div`
-  width: 100%;
-  padding: 0 5%;
+  padding-top: 120px;
+  text-align: start;
   p {
     margin: 0;
     font-size: 16px;
@@ -135,40 +152,10 @@ const Dummy = styled.div`
   /* border: 1px solid red; */
   background-color: rgba(0, 0, 0, 0);
   p {
-    font-size: 300px;
+    font-size: 9.8em;
     font-weight: 600;
     color: #000;
     text-align: center;
     align-items: center;
-  }
-`;
-
-const Cardwrap = styled.div`
-  width: 100%;
-  /* height: 400px; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 240px;
-  .card {
-    width: 300px;
-    height: 400px;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
-    position: relative;
-    img {
-      width: 100%;
-      position: absolute;
-      bottom: 0;
-    }
-    span {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-    }
-  }
-  .card:last-child {
-    border-right: 0;
   }
 `;
