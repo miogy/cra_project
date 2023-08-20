@@ -127,6 +127,9 @@ const MainWrap = styled.main`
     padding-top: 200px;
   }
   @media screen and (max-width: 1200px) and (min-width: 580px) {
+    section {
+      padding: 0 5%;
+    }
     .container {
       section {
         padding-bottom: 120px;

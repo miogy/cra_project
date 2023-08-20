@@ -18,14 +18,14 @@ function ImageGallery() {
           >
             #TEXTILE
           </button>
-          <button
+          {/* <button
             type="button"
             className="keyword_btn"
             onMouseEnter={() => handleKeywordHover("collaboration")}
             onMouseLeave={() => handleKeywordHover("textile")}
           >
             #COLLABORATION
-          </button>
+          </button> */}
           <button
             type="button"
             className="keyword_btn"
@@ -61,17 +61,17 @@ function ImageGallery() {
           <div
             className="hover_view"
             style={{
-              display: hoveredKeyword === "collaboration" ? "block" : "none",
+              display: hoveredKeyword === "graphic" ? "block" : "none",
             }}
           >
             <img src={require("../assets/card.jpg")} alt="archive01" />
           </div>
-          <div
+          {/* <div
             className="hover_view"
             style={{ display: hoveredKeyword === "graphic" ? "block" : "none" }}
           >
             <img src={require("../assets/web_main.jpg")} alt="archive01" />
-          </div>
+          </div> */}
           <div
             className="hover_view"
             style={{ display: hoveredKeyword === "motion" ? "block" : "none" }}
