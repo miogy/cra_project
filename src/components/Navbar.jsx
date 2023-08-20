@@ -59,6 +59,9 @@ function Navbar() {
       </h1>
       {display && (
         <div className="menu_display">
+          <Link to={path} className="menu_link">
+            HOME
+          </Link>
           <Link to="about" className="menu_link">
             ABOUT
           </Link>

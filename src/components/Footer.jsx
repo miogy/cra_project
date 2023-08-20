@@ -98,10 +98,10 @@ const FooterWrap = styled.footer`
   }
 
   .email {
-    padding: 30px 0;
+    padding-top: 30px;
+    padding-bottom: 20px;
     display: flex;
     flex-direction: column;
-
     small {
       margin-bottom: 10px;
       a {

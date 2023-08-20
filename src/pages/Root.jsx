@@ -2,22 +2,17 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { styled } from "styled-components";
-import { useEffect, useState } from "react";
-import ExternalLinkButton from "../hook/ExternalLinkButton";
-import { BsInstagram } from "react-icons/bs";
-import { FaGithubSquare } from "react-icons/fa";
+import { useCallback, useEffect, useState } from "react";
+// import ExternalLinkButton from "../hook/ExternalLinkButton";
+// import { BsInstagram } from "react-icons/bs";
+// import { FaGithubSquare } from "react-icons/fa";
 
 function Root() {
   const [isVisible, setIsVisible] = useState(true);
   const [height, setHeight] = useState(0);
-  const path = process.env.PUBLIC_URL;
+  // const path = process.env.PUBLIC_URL;
 
-  useEffect(() => {
-    window.addEventListener("scroll", listenToScroll);
-    return () => window.removeEventListener("scroll", listenToScroll);
-  }, []);
-
-  const listenToScroll = () => {
+  const listenToScroll = useCallback(() => {
     let heightToHideFrom = 700;
     const winScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
@@ -28,16 +23,21 @@ function Root() {
     } else {
       setIsVisible(true);
     }
-  };
+  }, [setHeight, isVisible, setIsVisible]);
+  useEffect(() => {
+    window.addEventListener("scroll", listenToScroll);
+    return () => window.removeEventListener("scroll", listenToScroll);
+  }, [listenToScroll]);
+
   return (
-    <>
+    <RootWrap>
       <div className="wrap">
         <Navbar />
         <Outlet />
       </div>
 
       <Dummy>
-        <div className="footer_bottom">
+        {/* <div className="footer_bottom">
           <ExternalLinkButton
             components="footer"
             link="https://www.instagram.com/mi_ogy"
@@ -49,10 +49,14 @@ function Root() {
             icon={<FaGithubSquare />}
           />
           <ExternalLinkButton components="footer" link={path} icon={"info"} />
-        </div>
+        </div> */}
       </Dummy>
       <div className="fixed_footer">
-        <BackgroundImg></BackgroundImg>
+        {/* <img src={require("../assets/main03_02.jpg")} alt="archive01" /> */}
+        <img
+          src="https://images.unsplash.com/photo-1585007600263-71228e40c8d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+          alt="archive01"
+        />
         <Footer />
       </div>
       {isVisible && (
@@ -60,30 +64,34 @@ function Root() {
           <p>HELLO!! 👀</p>
         </TopBackground>
       )}
-    </>
+    </RootWrap>
   );
 }
 
 export default Root;
 
+const RootWrap = styled.div`
+  .fixed_footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: -10;
+    img {
+      width: 100%;
+    }
+  }
+`;
+
 // footer_dummy
 const Dummy = styled.div`
   position: relative;
-  height: 140px;
+  height: 100px;
   .footer_bottom {
     position: absolute;
-    bottom: 20px;
+    bottom: 80px;
     left: 50%;
     transform: translateX(-50%);
   }
-`;
-const BackgroundImg = styled.div`
-  width: 100%;
-  height: 100vh;
-  margin-bottom: 120px;
-  /* background-color: #fcfcfc; */
-  background: center / contain no-repeat
-    url("https://images.unsplash.com/photo-1585007600263-71228e40c8d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80");
 `;
 
 const TopBackground = styled.div`
