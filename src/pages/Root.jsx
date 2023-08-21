@@ -10,7 +10,7 @@ import { useCallback, useEffect, useState } from "react";
 function Root() {
   const [isVisible, setIsVisible] = useState(true);
   const [height, setHeight] = useState(0);
-  // const path = process.env.PUBLIC_URL;
+  const path = process.env.PUBLIC_URL;
 
   const listenToScroll = useCallback(() => {
     let heightToHideFrom = 700;
@@ -32,8 +32,8 @@ function Root() {
   return (
     <RootWrap>
       <div className="wrap">
-        <Navbar />
-        <Outlet />
+        <Navbar path={path} />
+        <Outlet path={path} />
       </div>
 
       <Dummy>

@@ -1,29 +1,32 @@
 import React, { useEffect, useRef, useState } from "react";
 import { BsInstagram } from "react-icons/bs";
 import { FaGithubSquare } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 import ExternalLinkButton from "../hook/ExternalLinkButton";
 
 function Navbar() {
   const navigate = useNavigate();
+  const location = useLocation();
   const el = useRef();
   const [display, setDisplay] = useState(false);
+  const [title, setTitle] = useState(null);
   const path = process.env.PUBLIC_URL;
 
   const handleClose = (e) => {
     if (el.current !== e.target) {
       setDisplay(false);
     }
-    console.log(el.current, e.target);
+    // console.log(el.current, e.target);
   };
 
   useEffect(() => {
+    // console.log(location.pathname, `${path}/about`);
     window.addEventListener("click", handleClose);
     return () => {
       window.removeEventListener("click", handleClose);
     };
-  });
+  }, []);
   return (
     <NavWrap>
       <h1>
@@ -40,10 +43,14 @@ function Navbar() {
         <button
           type="button"
           className="nav_menu"
-          onClick={() => navigate(path)}
+          onClick={() => {
+            navigate(path);
+            setTitle("Designer | Front-end");
+          }}
         >
           <p>MIOGY</p>
-          <p>Designer | Front-end</p>
+          {/* <p>Designer | Front-end</p> */}
+          <p>{title}</p>
         </button>
         <div className="my_info">
           <ExternalLinkButton
@@ -59,23 +66,59 @@ function Navbar() {
       </h1>
       {display && (
         <div className="menu_display">
-          <Link to={path} className="menu_link">
+          <Link
+            to={path}
+            className="menu_link"
+            onClick={() => {
+              setTitle("Designer | Front-end");
+            }}
+          >
             HOME
           </Link>
-          <Link to="about" className="menu_link">
+          <Link
+            to="about"
+            className="menu_link"
+            onClick={() => {
+              setTitle("ABOUT | CAREER");
+            }}
+          >
             ABOUT
           </Link>
 
-          <Link to="graphic" className="menu_link">
+          <Link
+            to="graphic"
+            className="menu_link"
+            onClick={() => {
+              setTitle("GRAPHIC | TEXTILE & ARTWORK");
+            }}
+          >
             GRAPHIC
           </Link>
-          <Link to="develop" className="menu_link">
+          <Link
+            to="develop"
+            className="menu_link"
+            onClick={() => {
+              setTitle("DEVELOP | WEB & APP");
+            }}
+          >
             DEVELOP
           </Link>
-          <Link to="archive" className="menu_link">
+          <Link
+            to="archive"
+            className="menu_link"
+            onClick={() => {
+              setTitle("ARCHIVE");
+            }}
+          >
             ARCHIVE
           </Link>
-          <Link to="wallpaper" className="menu_link">
+          <Link
+            to="wallpaper"
+            className="menu_link"
+            onClick={() => {
+              setTitle("WALLPAPER");
+            }}
+          >
             WALLPAPER
           </Link>
 
