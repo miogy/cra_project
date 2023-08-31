@@ -9,7 +9,7 @@ import Main from "./pages/Main";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import Root from "./pages/Root";
-import Graphic from "./pages/Graphic";
+// import Graphic from "./pages/Graphic";
 import GraphicDetail from "./pages/GraphicDetail";
 import Wallpaper from "./pages/Wallpaper";
 import Archive from "./pages/Archive";
@@ -21,9 +21,9 @@ const router = createBrowserRouter([
     element: <Root />,
     errorElement: <NotFound />,
     children: [
-      { index: true, element: <Main /> },
+      { index: true, element: <About /> },
       { path: "about", element: <About /> },
-      { path: "graphic", element: <Graphic /> },
+      { path: "graphic", element: <Main /> },
       { path: "graphic/:designId", element: <GraphicDetail /> },
       { path: "develop", element: <Develop /> },
       { path: "archive", element: <Archive /> },

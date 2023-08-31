@@ -3,30 +3,24 @@ import { IoIosArrowUp } from "react-icons/io";
 import { styled } from "styled-components";
 import Slider from "../components/Slider";
 import ImageGallery from "../components/ImageGallery";
+import { handleScrollToTop } from "../hook/ScrollToTop";
 
 function Main() {
-  const handleScrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
-  };
   return (
     <MainWrap>
       <div className="container slider_wrap">
         <section>
           <Slider />
+        </section>
+      </div>
+
+      <Dummy></Dummy>
+      <div className="container">
+        <section>
           <Title>
             <h3>@WORK</h3>
           </Title>
           <ImageGallery />
-        </section>
-      </div>
-
-      <Dummy>{/* <p>PORTFOLIO</p> */}</Dummy>
-      <div className="container">
-        <section>
           <Title>
             <p>story</p>
             <h3>ARCHIVE</h3>
@@ -57,7 +51,16 @@ function Main() {
             </p>
             <p>SCROLL TO TOP</p>
           </button>
-          M<span>IOGY PORTFOLI</span>O
+          <img
+            src="https://github.com/miogy/cra_project/assets/99234582/f44f4c72-6976-4b16-b98f-6dc63c4dd171"
+            alt="text"
+          />
+        </div>
+        <div className="fixed_footer">
+          <img
+            src="https://images.unsplash.com/photo-1585007600263-71228e40c8d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+            alt="archive01"
+          />
         </div>
       </div>
     </MainWrap>
@@ -68,13 +71,10 @@ export default Main;
 
 const MainWrap = styled.main`
   width: 100%;
-  .slider_wrap {
-    padding-top: 100px;
-  }
   .container {
     background-color: #fff;
     section {
-      padding-bottom: 180px;
+      padding-bottom: 100px;
       text-align: center;
       .card_wrap {
         display: flex;
@@ -99,12 +99,12 @@ const MainWrap = styled.main`
     }
     .bottom_title {
       margin: 0;
-      padding: 0;
+      padding: 80px 0 0 0;
       font-size: 250px;
       font-weight: 700;
       letter-spacing: -22px;
-      span {
-        font-weight: 100;
+      img {
+        width: 100%;
       }
       .scroll_to_top {
         position: absolute;
@@ -116,10 +116,17 @@ const MainWrap = styled.main`
         font-size: 18px;
         font-weight: 600;
         letter-spacing: -1px;
-        p {
-          margin: 0;
-          padding: 0;
-        }
+      }
+    }
+    .fixed_footer {
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      text-align: center;
+      img {
+        width: 60%;
+        margin: 0 auto;
+        padding-bottom: 100px;
       }
     }
   }
@@ -132,11 +139,18 @@ const MainWrap = styled.main`
     }
     .container {
       section {
-        padding-bottom: 120px;
+        padding-bottom: 100px;
       }
     }
     .bottom_title {
       display: none;
+    }
+    @media screen and (max-width: 1200px) and (min-width: 580px) {
+      .fixed_footer {
+        img {
+          display: none;
+        }
+      }
     }
   }
 `;
@@ -153,9 +167,9 @@ const Title = styled.div`
   h3 {
     margin: 0;
     margin-bottom: 20px;
-    font-size: 32px;
+    font-size: 42px;
     font-weight: 400;
-    line-height: 32px;
+    line-height: 54px;
   }
   @media screen and (max-width: 1200px) and (min-width: 580px) {
     padding-top: 0;
@@ -164,16 +178,9 @@ const Title = styled.div`
 
 const Dummy = styled.div`
   width: 100%;
-  height: 400px;
+  height: 600px;
   /* border: 1px solid red; */
   background-color: rgba(0, 0, 0, 0);
-  p {
-    font-size: 9.8em;
-    font-weight: 600;
-    color: #000;
-    text-align: center;
-    align-items: center;
-  }
   @media screen and (max-width: 1200px) and (min-width: 580px) {
     height: 0;
   }

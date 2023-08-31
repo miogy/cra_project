@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef, useMemo } from "react";
+import { fontSize, fontWeight } from "../styles/style";
 import styled from "styled-components";
 import img1 from "../assets/slide_img01.png";
 import img2 from "../assets/main02_02.jpg";
@@ -12,7 +13,7 @@ function Slider() {
 
   const slideRef = useRef(null);
 
-  const TOTAL_SLIDES = 2;
+  const TOTAL_SLIDES = 4;
   const images = useMemo(
     () => [
       img1,
@@ -27,10 +28,10 @@ function Slider() {
   );
 
   const nextSlide = () => {
-    if (currentSlide >= TOTAL_SLIDES) {
-      setCurrentSlide(0);
-    } else {
+    if (currentSlide <= TOTAL_SLIDES) {
       setCurrentSlide(currentSlide + 1);
+    } else {
+      setCurrentSlide(0);
     }
   };
 
@@ -50,7 +51,7 @@ function Slider() {
   useEffect(() => {
     const sliderInterval = setInterval(() => {
       setCurrentSlide((prevIndex) =>
-        prevIndex === images.length - 2 ? 0 : prevIndex + 1
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
       );
     }, 3000);
     return () => clearInterval(sliderInterval);
@@ -79,6 +80,7 @@ const IMG = styled.img`
 const Container = styled.div`
   width: 100%;
   height: 80vh;
+  padding-top: 160px;
   overflow: hidden;
   @media screen and (max-width: 1200px) and (min-width: 580px) {
     height: 100%;
@@ -91,8 +93,8 @@ const Button = styled.button`
   padding-top: 15px;
   margin: 6px 10px;
   background-color: rgba(0, 0, 0, 0);
-  font-size: 16px;
-  font-weight: 600;
+  font-size: ${fontSize.small};
+  font-weight: ${fontWeight.semiBold};
   line-height: 26px;
   &:hover {
     transition: all 0.3s ease-in-out;

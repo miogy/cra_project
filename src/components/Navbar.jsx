@@ -4,26 +4,31 @@ import { FaGithubSquare } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 import ExternalLinkButton from "../hook/ExternalLinkButton";
+import { handleScrollToTop } from "../hook/ScrollToTop";
+import { fontSize, fontWeight } from "../styles/style";
 
 function Navbar() {
   const navigate = useNavigate();
   const el = useRef();
   const [display, setDisplay] = useState(false);
+  const [title, setTitle] = useState(null);
   const path = process.env.PUBLIC_URL;
 
   const handleClose = (e) => {
     if (el.current !== e.target) {
       setDisplay(false);
     }
-    console.log(el.current, e.target);
+    // console.log(el.current, e.target);
   };
 
   useEffect(() => {
+    // console.log(location.pathname, `${path}/about`);
     window.addEventListener("click", handleClose);
     return () => {
       window.removeEventListener("click", handleClose);
     };
-  });
+  }, []);
+
   return (
     <NavWrap>
       <h1>
@@ -40,10 +45,14 @@ function Navbar() {
         <button
           type="button"
           className="nav_menu"
-          onClick={() => navigate(path)}
+          onClick={() => {
+            navigate(path);
+            setTitle("Designer | Front-end");
+            handleScrollToTop();
+          }}
         >
           <p>MIOGY</p>
-          <p>Designer | Front-end</p>
+          <p>{title}</p>
         </button>
         <div className="my_info">
           <ExternalLinkButton
@@ -59,29 +68,74 @@ function Navbar() {
       </h1>
       {display && (
         <div className="menu_display">
-          <Link to={path} className="menu_link">
+          <Link
+            to={path}
+            className="menu_link"
+            onClick={() => {
+              setTitle("Designer | Front-end");
+              handleScrollToTop();
+            }}
+          >
             HOME
           </Link>
-          <Link to="about" className="menu_link">
+          {/* <Link
+            to="about"
+            className="menu_link"
+            onClick={() => {
+              setTitle("ABOUT | CAREER");
+              handleScrollToTop();
+            }}
+          >
             ABOUT
-          </Link>
+          </Link> */}
 
-          <Link to="graphic" className="menu_link">
+          <Link
+            to="graphic"
+            className="menu_link"
+            onClick={() => {
+              setTitle("GRAPHIC | TEXTILE & ARTWORK");
+              handleScrollToTop();
+            }}
+          >
             GRAPHIC
           </Link>
-          <Link to="develop" className="menu_link">
+          <Link
+            to="develop"
+            className="menu_link"
+            onClick={() => {
+              setTitle("DEVELOP | WEB & APP");
+              handleScrollToTop();
+            }}
+          >
             DEVELOP
           </Link>
-          <Link to="archive" className="menu_link">
+          {/* <Link
+            to="archive"
+            className="menu_link"
+            onClick={() => {
+              setTitle("ARCHIVE");
+              handleScrollToTop();
+            }}
+          >
             ARCHIVE
           </Link>
-          <Link to="wallpaper" className="menu_link">
+          <Link
+            to="wallpaper"
+            className="menu_link"
+            onClick={() => {
+              setTitle("WALLPAPER");
+              handleScrollToTop();
+            }}
+          >
             WALLPAPER
-          </Link>
+          </Link> */}
 
           <button
             className="menu_link close_btn"
-            onClick={() => setDisplay(false)}
+            onClick={() => {
+              setDisplay(false);
+              handleScrollToTop();
+            }}
           >
             CLOSE
           </button>
@@ -94,20 +148,22 @@ function Navbar() {
 export default Navbar;
 
 const NavWrap = styled.nav`
-  padding: 0 5%;
+  width: 100%;
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
   /* border: 1px solid red; */
   background-color: #fff;
-
+  z-index: 9999;
   h1 {
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     .nav_menu {
       font-size: 58px;
-      font-weight: 800;
+      font-weight: ${fontWeight.bold};
       font-family: "Gerstner Programm FSL", "Noto Sans KR", sans-serif;
       -webkit-font-smoothing: antialiased;
       border: 0;
@@ -120,7 +176,7 @@ const NavWrap = styled.nav`
       p:last-child {
         margin: 0;
         padding: 0;
-        font-size: 18px;
+        font-size: ${fontSize.regular};
         line-height: 26px;
       }
     }
@@ -146,8 +202,8 @@ const NavWrap = styled.nav`
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    font-size: 32px;
-    font-weight: 700;
+    font-size: ${fontSize.medium};
+    font-weight: ${fontWeight.bold};
     line-height: 48px;
     list-style: none;
     text-decoration: none;
