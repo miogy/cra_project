@@ -10,7 +10,7 @@ import {
   palette,
 } from "../styles/style";
 import BottomTitle from "../ui/BottomTitle";
-import ImageSlider from "../components/ImageSlider";
+// import instaImg from "../assets/insta.png";
 
 const TabContentsBox = styled.div`
   ${laptopContainer}
@@ -91,6 +91,7 @@ const CareerWrap = styled.div`
     ${borderBottom}
   }
 `;
+
 function Career() {
   return (
     <CareerWrap>
@@ -297,11 +298,11 @@ function Container() {
 function About(path) {
   const location = useLocation();
   const [tab, setTab] = useState(0);
-  const category = ["Introduction", "Career", "Contact Us"];
+  const category = ["Introduction", "Career", "SNS"];
   const tabContents = {
     0: <Container />,
     1: <Career />,
-    2: <ImageSlider />,
+    // 2: <SNS />,
   };
   useEffect(() => {
     if (location.pathname === `${path + "about"}`) {

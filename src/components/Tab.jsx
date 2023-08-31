@@ -3,6 +3,16 @@ import { styled } from "styled-components";
 import { handleScrollToTop } from "../hook/ScrollToTop";
 
 function Tab({ category, setTab, tab }) {
+  const handleTabClick = (index, item) => {
+    if (item === "SNS") {
+      // window.location.href = "https://www.instagram.com/mi_ogy";
+      window.open("https://www.instagram.com/mi_ogy", "_blank");
+    } else {
+      setTab(index);
+      handleScrollToTop();
+    }
+  };
+
   return (
     <TabWrap>
       <div>
@@ -12,9 +22,7 @@ function Tab({ category, setTab, tab }) {
               key={i}
               className={tab === i ? "active" : null}
               onClick={() => {
-                // console.log(i);
-                setTab(i);
-                handleScrollToTop();
+                handleTabClick(i, item);
               }}
             >
               <span>{item}</span>
