@@ -1,14 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { BsInstagram } from "react-icons/bs";
 import { FaGithubSquare } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 import ExternalLinkButton from "../hook/ExternalLinkButton";
 import { handleScrollToTop } from "../hook/ScrollToTop";
 import { fontSize, fontWeight } from "../styles/style";
 
 function Navbar() {
-  const navigate = useNavigate();
   const el = useRef();
   const [display, setDisplay] = useState(false);
   const [title, setTitle] = useState(null);
@@ -46,7 +45,7 @@ function Navbar() {
           type="button"
           className="nav_menu"
           onClick={() => {
-            navigate(path);
+            window.location.reload();
             setTitle("Designer | Front-end");
             handleScrollToTop();
           }}

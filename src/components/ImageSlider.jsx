@@ -40,46 +40,46 @@ const TextSlide = styled.div`
   }
 `;
 
-const SliderControl = styled.div`
-  margin: 0;
-  position: absolute;
-  z-index: 2;
-  bottom: 4%;
-  left: 15%;
-  transform: translate(-50%, -50%);
-  display: flex;
-`;
+// const SliderControl = styled.div`
+//   margin: 0;
+//   position: absolute;
+//   z-index: 2;
+//   bottom: 4%;
+//   left: 15%;
+//   transform: translate(-50%, -50%);
+//   display: flex;
+// `;
 
-const Button = styled.button`
-  color: #fff;
-  background: none;
-  padding: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  font-size: 16px;
-  border-radius: 50%;
-  margin: 0.4em;
-  display: inline-block;
-`;
+// const Button = styled.button`
+//   color: #fff;
+//   background: none;
+//   padding: 24px;
+//   border: 1px solid rgba(255, 255, 255, 0.3);
+//   font-size: 16px;
+//   border-radius: 50%;
+//   margin: 0.4em;
+//   display: inline-block;
+// `;
 
-const Blocks = styled.div`
-  position: relative;
-`;
+// const Blocks = styled.div`
+//   position: relative;
+// `;
 
-const Block = styled.div`
-  /* z-index: 1; */
-  position: fixed;
-  height: 600px;
-  background: #0f0f0f;
-`;
+// const Block = styled.div`
+//   /* z-index: 1; */
+//   position: fixed;
+//   height: 600px;
+//   background: #0f0f0f;
+// `;
 
-const Overlay = styled.div`
-  /* z-index: 1; */
-  position: fixed;
-  height: 600px;
-  width: 20%;
-  left: 5%;
-  background: rgba(0, 0, 0, 0.65);
-`;
+// const Overlay = styled.div`
+//   z-index: 1;
+//   position: fixed;
+//   height: 600px;
+//   width: 20%;
+//   left: 5%;
+//   background: rgba(0, 0, 0, 0.65);
+// `;
 
 const ImageSliderWrapper = styled.div`
   z-index: 0;
@@ -168,20 +168,20 @@ const ImageSlider = () => {
           </TextSlider>
         </TextSliderWrapper>
 
-        <SliderControl className="slider-control">
+        {/* <SliderControl className="slider-control">
           <div className="prev">
             <Button type="button"></Button>
           </div>
           <div className="next">
             <Button type="button"></Button>
           </div>
-        </SliderControl>
+        </SliderControl> */}
 
-        <Blocks className="blocks">
+        {/* <Blocks className="blocks">
           <Block className="block-1"></Block>
           <Block className="block-2"></Block>
           <Block className="block-3"></Block>
-        </Blocks>
+        </Blocks> */}
 
         {/* <Overlay className="overlay"></Overlay> */}
       </Wrapper>

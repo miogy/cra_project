@@ -11,7 +11,7 @@ function Root() {
   const location = useLocation();
 
   const listenToScroll = useCallback(() => {
-    const path = process.env.PUBLIC_URL;
+    // const path = process.env.PUBLIC_URL;
     const winScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
     setHeight(winScroll);
