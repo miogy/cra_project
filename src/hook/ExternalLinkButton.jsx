@@ -25,6 +25,7 @@ function ExternalLinkButton({ link, icon, components }) {
 export default ExternalLinkButton;
 
 const InfoBtn = styled.button`
+  margin-right: 20px;
   border: 0;
   background-color: rgba(0, 0, 0, 0);
   /* font-size: 56px; */

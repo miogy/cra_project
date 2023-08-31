@@ -1,27 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
 import { styled } from "styled-components";
+import { handleScrollToTop } from "../hook/ScrollToTop";
 
-function Tab() {
-  const [tab, setTab] = useState(0);
-  const category = ["Introduction", "Design", "Develop", "Hobby"];
-
+function Tab({ category, setTab, tab }) {
   return (
     <TabWrap>
-      <ul>
+      <div>
         {category.map((item, i) => {
           return (
-            <li
+            <button
               key={i}
+              className={tab === i ? "active" : null}
               onClick={() => {
                 // console.log(i);
                 setTab(i);
+                handleScrollToTop();
               }}
             >
-              {item}
-            </li>
+              <span>{item}</span>
+            </button>
           );
         })}
-      </ul>
+      </div>
     </TabWrap>
   );
 }
@@ -29,19 +29,31 @@ function Tab() {
 export default Tab;
 
 const TabWrap = styled.div`
-  ul {
+  div {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    li {
-      padding: 10px;
-      margin-right: 20px;
+    button {
+      width: 160px;
+      height: 42px;
+      text-align: center;
       border: 1px solid #000;
-      border-radius: 20px;
+      border-radius: 21px;
+      font-weight: 800;
+      color: #000;
+      background-color: rgba(0, 0, 0, 0);
     }
-    li:hover {
+    button:hover {
       cursor: pointer;
       background-color: #000;
+      span {
+        color: #fff;
+      }
+    }
+  }
+  .active {
+    background-color: #000;
+    span {
       color: #fff;
     }
   }
